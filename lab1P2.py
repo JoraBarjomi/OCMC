@@ -43,5 +43,10 @@ plt.show()
 fftArr = np.fft.rfft(y[:, 0])
 freqsArr = np.fft.rfftfreq(len(y[:, 0]), d=1/fs)
 magnitudes = np.abs(fftArr)
-plt.plot(freqsArr[5:], magnitudes[5:])
+
+fftArr2 = np.fft.rfft(y1)
+freqsArr2 = np.fft.rfftfreq(len(y1), d=1/fs1)
+magnitudes2 = np.abs(fftArr2)
+
+plt.plot(freqsArr[5:], magnitudes[5:], freqsArr2[5:], magnitudes2[5:])
 plt.show()

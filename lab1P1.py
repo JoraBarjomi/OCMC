@@ -66,11 +66,9 @@ fd4 = fd * 4
 deltaT4 = 1 / fd4
 t24 = np.arange(0, 1, deltaT4)
 y24 = 4 * np.cos(2 * np.pi * f * t24  +  (np.pi / 12))
-
 fftArr4 = myRfft(y24)
 freqsArr4 = np.fft.rfftfreq(len(y24), d=deltaT4)
 print(f"y24 type: {y24.dtype} size: {y24.nbytes}")
-
 aplitude4 = np.abs(fftArr4)
 threshold4 = 0.1 * np.max(aplitude4)
 active_indices4 = np.where(aplitude4 > threshold4)[0]
